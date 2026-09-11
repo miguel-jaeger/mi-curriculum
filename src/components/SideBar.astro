@@ -3,13 +3,16 @@ import SideBarFooter from "./SideBarFooter.astro";
 import { Image } from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
 const { sideBarActiveItemID } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 ---
 
 <div class="drawer-side z-40">
   <label for="my-drawer" class="drawer-overlay"></label>
   <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col">
     <div class="w-fit mx-auto mt-5 mb-6">
-      <a href="/mi-curriculum/">
+      <a href={base}>
         <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
           <div class="w-[8.5rem]">
             <Image class="mask mask-circle" format="webp" width={300} height={300} src="/profile.jpg" alt="Profile image" />

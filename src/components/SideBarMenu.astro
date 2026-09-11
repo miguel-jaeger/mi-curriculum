@@ -1,15 +1,18 @@
 ---
 const { sideBarActiveItemID } = Astro.props;
 const activeClass = "bg-base-300"; // For primary color replace with `active` class
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
-    <li><a class="py-3 text-base" id="home" href="/mi-curriculum/">Inicio</a></li>
-    <li><a class="py-3 text-base" id="cv" href="/mi-curriculum/curriculum">Curriculum</a></li>
-    <li><a class="py-3 text-base" id="publicaciones" href="/mi-curriculum/publicaciones">Publicaciones</a></li>
-    <li><a class="py-3 text-base" id="postgrados-impartidos" href="/mi-curriculum/postgrados-impartidos">Postgrados impartidos</a></li>
-    <li><a class="py-3 text-base" id="postgrados-recibidos" href="/mi-curriculum/postgrados-recibidos">Postgrados recibidos</a></li>
-    <li><a class="py-3 text-base" id="projects" href="/mi-curriculum/proyectos">Proyectos</a></li>
+    <li><a class="py-3 text-base" id="home" href={base}>Inicio</a></li>
+    <li><a class="py-3 text-base" id="cv" href={`${base}curriculum`}>Curriculum</a></li>
+    <li><a class="py-3 text-base" id="publicaciones" href={`${base}publicaciones`}>Publicaciones</a></li>
+    <li><a class="py-3 text-base" id="postgrados-impartidos" href={`${base}postgrados-impartidos`}>Postgrados impartidos</a></li>
+    <li><a class="py-3 text-base" id="postgrados-recibidos" href={`${base}postgrados-recibidos`}>Postgrados recibidos</a></li>
+    <li><a class="py-3 text-base" id="projects" href={`${base}proyectos`}>Proyectos</a></li>
     <!-- <li><a class="py-3 text-base" id="store" href="/store">Store</a></li>
     <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li>-->
     
